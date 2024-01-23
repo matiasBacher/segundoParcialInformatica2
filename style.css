@@ -1,0 +1,555 @@
+
+@font-face {/*importo fuente para usar simbolos*/
+    font-family: "remixicon";
+    src: url("iconos/remixicon.woff2") format("woff2");
+    font-display: swap;
+  }
+  
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --altura-menuReg: 30px;
+    --altura-menus:50px;
+    --gris: rgb(51, 51, 51);
+    --gris-claro: rgb(248, 248, 248);
+    --maximo-ancho: 1600px;
+    --celeste: rgb(0, 200, 200);
+
+}
+
+
+/* **************************************************
+**************************************************
+HEADER
+**************************************************
+************************************************** */
+
+nav{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    z-index: 3;
+    height: calc(var(--altura-menuReg) + var(--altura-menus));
+    
+   
+}
+nav a {
+    text-decoration: none;
+}
+nav li {
+    list-style: none;
+}
+#fecha{
+    color: white;
+    text-align: center;
+    z-index: 20;
+    background-color: var(--gris);
+    height: 0px;
+    overflow: hidden;
+    font-size: 16px;
+    transition: all 0.5s ease-in-out;
+
+}
+
+#menuReg{
+    height: var(--altura-menuReg);
+    background-color: var(--gris);
+    display: flex;
+    justify-content: space-around;
+    width: calc(100vw);
+   
+    align-content: center;
+}
+#menuReg a{
+    color: #fff ;
+    
+}
+#contenedor-Supra-menus{
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(51,51,51,0.2);
+    z-index: 3;
+    height: var(--altura-menus);
+}
+#contedor_menus{
+    display: flex;
+    float: right;
+    max-width: 650px;
+    width: calc(100% - 40px);
+    padding-right: 50px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    height: var(--altura-menus);
+    align-items: center;
+    margin-right: 15px;
+    
+    
+    
+    
+}
+#tres-rayitas {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin: 0px auto;
+
+}
+#menus {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    /* height: 30px; */
+    align-items: center;
+    width: 100%;
+    flex-shrink: 1;
+    margin-right: 5px;
+    flex-wrap: wrap;
+}
+#menus li {
+    position: relative;
+   
+}
+#menus>li>a {
+    color: white;
+}
+/* #########################
+Barra búsqueda
+######################### */
+
+#contedor-buscar {
+    position: relative;
+    overflow: hidden;
+}
+
+#icono-buscar {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+}
+#contedor_menus input[type="search"]{
+    max-width: 150px ;
+    height: 25px;
+    padding-left: 5px;
+}
+
+
+/* ##################################
+Ventana desplegable
+##################################  */
+
+.ventana{
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    width: 300px;
+    left: -10px;
+    box-shadow: 3px 5px 11px #504b4b; 
+    border-radius: 5px;
+    top: 25px;
+    
+    z-index: 10;
+}
+.contenedorMenus{
+    display: flex;
+    margin-bottom: 20px;
+}
+.oculto {
+    display: none !important;
+}
+
+.listaMenu {
+    margin-right: 50px;
+}
+.listaMenu li {
+    margin-top: 20px;
+}
+.listaMenu li a {
+    color: var(--gris)
+}
+.listaMenu li:nth-child(1) a {
+    font-weight: bolder;
+}
+.oferta {
+    background-color: var(--gris);
+    color: white;
+    padding: 10px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+
+
+/* **************************************************
+**************************************************
+MAIN
+**************************************************
+**************************************************
+*/
+
+main{ 
+
+    margin-top: var(--altura-menuReg) ;
+}
+main>section {
+    margin-bottom: 10px !important;
+}
+
+/* #######################################
+galeria
+####################################### */
+
+#galeria {
+    width: 100%;
+    height: calc(100vh - var(--altura-menuReg));
+    overflow: hidden;
+    position: relative;    
+}
+
+.porta-imagen{ 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    /* position: absolute;
+    top: 100%; */
+    overflow: hidden;
+
+    
+}
+.porta-imagen img {
+    width: 100%;
+}
+
+/* #################################
+secion prendas 
+#################################### */
+
+#prendas{
+    border-top: 1px var(--gris) solid;
+    max-width: var(--maximo-ancho);
+    margin: 0px auto;
+}
+
+#menuPrendas{
+    display: flex;
+    padding: 10px;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+#menuPrendas a{
+    color: var(--gris);
+    text-decoration: none;
+    font-weight: 700;
+
+}
+#contenedorPrendas{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    max-width: 1600px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.subsec_contenedorPrendas{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width: 350px;
+    flex-grow: 1;
+
+}
+.prendas{
+    width: calc(50% - 20px);
+    /* box-shadow: 3px 5px 11px #504b4b; */
+    min-width: 300px;
+    height: 400px;
+    margin: 10px;
+   overflow: hidden;
+   box-sizing: border-box;
+   flex-grow: 1;
+   display: flex;
+   align-items: center;
+   border-radius: 10px;
+   border: 1px solid var(--gris);
+   position: relative;
+   transition: all 0.25s ease-in-out;
+
+    
+}
+.precio{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+}
+.tachado{
+    text-decoration:line-through;
+}
+.prendas img{
+    width: 100%;
+}
+.subsec_contenedorPrendas:nth-child(1)>
+.prendas:nth-child(3) img, .imagenVertical{
+    width: auto !important;
+    height: 100%;
+}
+.grande{
+    width: 100%;
+    height: 400px;
+
+}
+
+/* #E########################
+detalles
+######################## */
+
+.detalles{
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 120px;
+    bottom:-100%;
+    
+    transition: bottom 0.5s ease-out;
+    border-top: 1px solid #000;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    --ancho: 150px;
+    box-sizing: border-box;
+}
+.detalles div{
+    display: flex;
+    width: var(--ancho);
+    justify-content: space-between;
+    max-width: var(--anchoMaximo);
+}
+.detalles p {
+    font-weight: 700;
+}
+.detalles .icono_detalles{
+    color: white;
+    background-color: var(--gris);
+    padding-top: 12px;
+    text-align: center;
+    border-radius: 100%;
+    display: block; 
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    
+}
+/* #############################################
+#email-formulario-ingreso
+############################################### */
+
+#formulario{
+    max-width: var(--maximo-ancho);
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    justify-content: space-around;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#formulario form {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 50px);
+    min-width: 300px;
+    max-width: 90%;
+    align-items: flex-start;
+}
+#formulario form *{
+    margin-bottom: 20px;
+}
+#formulario form :not([type="submit"]){
+    height: 30px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+#formulario h1 {
+    font-size: 20px;
+    color: var(--gris);
+    margin-bottom: 30px;
+}
+#formulario form [type="submit"]{
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 0px;
+    border: 1px solid ;
+    background-color: white;
+    text-transform: capitalize;
+}
+/* **************************************************
+**************************************************
+Footer
+**************************************************
+**************************************************
+************************************************** */
+
+footer{
+   background-color: var(--gris-claro);
+    
+}
+footer a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+#links-footer {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+    padding: 20px;
+    max-width: var(--maximo-ancho);
+    margin: 0px auto;
+
+}
+#links-footer h1 {
+    font-size: 16px;
+}
+#links-footer div{
+    margin: 5px;
+}
+#links-footer div>a {
+    margin-top: 10px;
+
+}
+#redes-footer{
+    max-width: var(--anchoMaximo);
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: var(--celeste);
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+#redes-footer div{
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+#redes-footer .icono_detalles {
+    color: #fff;
+    font-size: 50px;
+}
+
+#menus li:hover>a, #menuPrendas li:hover a, #menuReg li:hover a{
+    color: var(--celeste) ;
+}
+#reloj{
+    padding: 10px;
+    text-align: center;
+    background-color: var(--gris);
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.icono_detalles{
+    font-family: 'remixicon';
+    /* font-family: 'Material Symbols Outlined';
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 700; */
+   
+
+}
+.contenedorPantallaChica {
+    height: 200px !important;
+
+    
+
+}
+.contenedorPantallaChica #contedor_menus{
+    height: 200px;
+    
+}
+.contenedorPantallaChica #menus{
+    flex-direction: column;
+    height: 150px;
+    align-items: flex-start;
+    align-content: center;
+}
+
+
+@media (max-width:680px){
+    .prendas{
+        height: 400px;
+    }
+    #contenedor-Supra-menus{
+        display: flex; 
+        justify-content: space-around;
+    }
+    #contedor_menus{
+        
+        padding: 0px;
+        flex-direction: column;
+        justify-content: space-around ;
+        
+    }
+    
+    :root{
+        --altura-menus:60px
+    }
+    #contedor-buscar {
+        width: calc(100% - 20px);
+    }
+    #buscar{
+        width: calc(100%);
+        max-width: none !important;
+    
+    }
+    #formulario {
+        flex-direction: column;
+        align-content: center;
+    }
+    #formulario form {
+        width: calc(100% - 20px);
+    }
+
+}
+@media (max-width: 400px){
+
+    #menus{
+        height: 0px;
+        overflow: hidden;
+    }
+    #contedor-buscar{
+        height: 0px;
+    }
+    .ventana{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+    
+
+
+}
